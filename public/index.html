@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wadsbasement</title>
+
+    <!-- Ultraviolet Scripts -->
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/uv/sw.js", {
+                    scope: __uv$config.prefix,
+                });
+            });
+        }
+    </script>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <div class="container">
+        <h1>wadsbasement</h1>
+        <div class="search-bar">
+            <input type="text" id="urlInput" placeholder="Enter a URL or search term...">
+            <button id="searchButton">Go</button>
+        </div>
+        <iframe id="iframeWindow" class="iframeWindow" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+    </div>
+
+    <!-- JS Logic -->
+    <script src="example1.js"></script>
+</body>
+</html>
